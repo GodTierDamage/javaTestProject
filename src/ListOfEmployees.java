@@ -2,10 +2,18 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListOfEmployees implements ICrud{
+public class ListOfEmployees implements ICrud<Employee>{
 
-    List<Employee> listOfEmployees;
-    Loader loader;
+    private List<Employee> listOfEmployees;
+    private Loader loader;
+
+    public List<Employee> getListOfEmployees() {
+        return listOfEmployees;
+    }
+
+    public Loader getLoader() {
+        return loader;
+    }
 
     public ListOfEmployees(){
         listOfEmployees = new ArrayList<>();

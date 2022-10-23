@@ -11,7 +11,7 @@ public class Other extends Employee{
 
     @Override
     public String toString() {
-        return "Other{" +
+        return "Other: " +
                 super.toString() +
                 "description='" + description + '\'' +
                 '}';

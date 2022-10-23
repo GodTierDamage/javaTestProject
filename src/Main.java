@@ -1,5 +1,8 @@
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class Main {
 
@@ -12,6 +15,9 @@ public class Main {
             System.out.println("Download error");
             e.printStackTrace();
         }
+        list.read();
+        System.out.println("__________________________________________________________________");
+        ListManager.sortByStartWorkDay(list);
         list.read();
     }
 }

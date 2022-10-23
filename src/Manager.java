@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Manager extends Employee implements ICrud{
+public class Manager extends Employee implements ICrud<Employee>{
 
     private List<Employee> subjectsList;
 

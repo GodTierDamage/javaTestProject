@@ -1,7 +1,7 @@
 public interface ICrud<T>{
 
-    void add(Employee employee);
-    void delete(Employee employee);
+    void add(T employee);
+    void delete(T employee);
     void read();
 
 }
