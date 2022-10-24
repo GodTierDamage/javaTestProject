@@ -1,23 +1,25 @@
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.stream.Collectors;
+import java.util.Scanner;
 
 public class Main {
 
+    static Scanner scanner;
+
     public static void main(String[] args) {
+        scanner = new Scanner(System.in);
         ListOfEmployees list = new ListOfEmployees();
-        String path = "Employees.txt";
-        try{
-            list.loadList(path);
-        }catch (IOException e){
-            System.out.println("Download error");
+        ListManager listManager = new ListManager(list);
+
+        try {
+            listManager.fillList("Employees.txt");
+        }
+        catch (IOException e){
+            System.out.println("Ошибка загрузки файла");
             e.printStackTrace();
         }
-        list.read();
-        System.out.println("__________________________________________________________________");
-        ListManager.sortByStartWorkDay(list);
-        list.read();
+
+        if(!list.getListOfEmployees().isEmpty()){
+           listManager.read();
+        }
     }
 }

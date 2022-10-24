@@ -32,9 +32,18 @@ public abstract class Employee{
     }
 
     @Override
+    public String toString() {
+        return  "firstName='" + firstName + '\'' +
+                ", surname='" + surname + '\'' +
+                ", birthday='" + birthday + '\'' +
+                ", startWorkDay='" + startWorkDay + '\'' +
+                '}';
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (!(o instanceof Employee)) return false;
         Employee employee = (Employee) o;
         return firstName.equals(employee.firstName) && surname.equals(employee.surname) && birthday.equals(employee.birthday) && startWorkDay.equals(employee.startWorkDay);
     }
@@ -42,14 +51,5 @@ public abstract class Employee{
     @Override
     public int hashCode() {
         return Objects.hash(firstName, surname, birthday, startWorkDay);
-    }
-
-    @Override
-    public String toString() {
-        return  "firstName='" + firstName + '\'' +
-                ", surname='" + surname + '\'' +
-                ", birthday='" + birthday + '\'' +
-                ", startWorkDay='" + startWorkDay + '\'' +
-                '}';
     }
 }
